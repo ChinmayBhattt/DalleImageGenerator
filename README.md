@@ -1,24 +1,23 @@
-# 🎨 Dalle Image Generator
+# 🎨 DALL·E Image Generator (OpenAI)
 
-A simple Python-based image generator using **Google's Gemini API** (Free Tier). Enter a prompt and get AI-generated images with ease.
+A simple Python-based app to generate AI images from text prompts using **OpenAI's DALL·E API**.
 
-> ⚡️ Lightweight • 🔓 Open Source • 🌐 Uses Gemini (not OpenAI) API
+> ⚡ Easy to use • 🎯 Prompt-based image generation • 💡 Open Source
 
 ---
 
 ## 🚀 Features
 
-- ✅ Generate images using text prompts
-- ✅ Built with Python & Google Generative AI SDK
-- ✅ Free to use with Gemini Free Tier
-- ✅ Fast and minimal code
-- ✅ Easy to customize or extend
+- ✅ Text-to-Image generation using OpenAI API
+- ✅ Uses DALL·E model via OpenAI Python SDK
+- ✅ Lightweight & beginner-friendly script
+- ✅ Easy customization for projects or apps
 
 ---
 
 ## 🛠️ Setup Instructions
 
-### 1. Clone the repo
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/ChinmayBhattt/DalleImageGenerator.git
 cd DalleImageGenerator
