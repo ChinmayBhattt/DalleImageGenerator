@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenAI Image Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">OpenAI Image Generator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                Choose Image
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Generate Cat Image</a></li>
+                <li><a class="dropdown-item" href="#">Generate Cricket Images</a></li>
+                <li><a class="dropdown-item" href="#">Generate Cloud Images</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <div class="text-generator-container">
+        <h2 class="text-center mb-4">Create Amazing AI Images</h2>
+        <div class="input-section">
+          <textarea class="form-control" id="promptInput" rows="3" placeholder="Describe the image you want to generate..."></textarea>
+          <div class="controls">
+            <select class="form-select" id="imageSize">
+              <option value="256x256">256x256</option>
+              <option value="512x512">512x512</option>
+              <option value="1024x1024">1024x1024</option>
+            </select>
+            <button class="generate-btn">Generate Image <i class="fas fa-magic"></i></button>
+          </div>
+        </div>
+        <div class="image-display" id="result">
+          <!-- Generated images will appear here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

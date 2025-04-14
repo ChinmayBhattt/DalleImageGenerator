@@ -1,0 +1,209 @@
+:root {
+    --primary: #2a2a72;
+    --secondary: #009ffd;
+    --accent: #ff6b6b;
+    --background: #f8f9fa;
+    --text: #2d3436;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: var(--background);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: navbarFloat 0.5s ease-out;
+  }
+  
+  .navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
+    transform: scale(1.05);
+  }
+  
+  .nav-link {
+    color: white !important;
+    position: relative;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Main Container Styling */
+  .main-container {
+    min-height: calc(100vh - 76px);
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  .text-generator-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: containerFade 0.6s ease-out;
+  }
+  
+  .text-generator-container h2 {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .input-section {
+    margin: 2rem 0;
+  }
+  
+  #promptInput {
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    resize: none;
+    margin-bottom: 1rem;
+  }
+  
+  #promptInput:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 159, 253, 0.25);
+  }
+  
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  #imageSize {
+    width: 150px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+  }
+  
+  .generate-btn {
+    flex-grow: 1;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-display {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Animations */
+  @keyframes navbarFloat {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes containerFade {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Loading Animation */
+  .loading {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .loading::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--secondary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.5rem 1rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+    
+    .text-generator-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+    
+    .controls {
+      flex-direction: column;
+    }
+    
+    #imageSize {
+      width: 100%;
+    }
+  }
